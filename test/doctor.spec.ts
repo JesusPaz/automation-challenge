@@ -1,15 +1,15 @@
 import { browser } from 'protractor';
 import { LandingPage } from '../src/page/landing.page';
 import { DoctorDataPage } from '../src/page/doctor-data.page';
-import { ConfirmationDoctorPage } from '../src/page/confirmation-doctor.page';
+import { ConfirmationPage } from '../src/page/confirmation.page';
 
 describe('Add a new doctor', () => {
 
   const landingPage: LandingPage = new LandingPage();
   const doctorDataPage: DoctorDataPage = new DoctorDataPage();
-  const confirmationDoctorPage: ConfirmationDoctorPage = new ConfirmationDoctorPage();
+  const confirmationPage: ConfirmationPage = new ConfirmationPage();
 
-  it('fill all the data to create a new docor', async () => {
+  it('fill all the data to create a new doctor', async () => {
     await browser.get('http://automatizacion.herokuapp.com/jpaz/');
 
     await landingPage.addDoctorBtnClick();
@@ -19,7 +19,7 @@ describe('Add a new doctor', () => {
     await doctorDataPage.sendIdKeys();
     await doctorDataPage.clickSubmitBtn();
 
-    await expect(confirmationDoctorPage.getConfimMsg())
+    await expect(confirmationPage.getConfimMsg())
       .toBe('Datos guardados correctamente.');
   });
 });

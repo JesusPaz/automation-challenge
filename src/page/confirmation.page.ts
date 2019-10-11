@@ -1,6 +1,6 @@
 import { $, ElementFinder } from 'protractor';
 
-export class ConfirmationDoctorPage {
+export class ConfirmationPage {
   private confirmationMsg: ElementFinder;
 
   constructor () {
