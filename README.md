@@ -1,2 +1,1 @@
-# automation-challenge
-Automation challenge from psl workshop
+# protractor-workshop-2018
