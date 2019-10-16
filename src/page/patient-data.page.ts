@@ -6,7 +6,6 @@ export class PatientDataPage {
   private idKey: ElementFinder;
   private submitBtn: ElementFinder;
   private prepaidHealthCheck: ElementFinder;
-  private idValue;
 
   constructor () {
     this.nameKey = $('div.form-group:nth-child(1) > input:nth-child(2)');
@@ -14,19 +13,18 @@ export class PatientDataPage {
     this.idKey = $('div.form-group:nth-child(5) > input:nth-child(2)');
     this.prepaidHealthCheck = $('.checkbox > label:nth-child(1) > input:nth-child(1)');
     this.submitBtn = $('.btn');
-    this.idValue = Math.floor(Math.random() * (999999999 - 9999)) + 9999;
   }
 
-  public async sendNameKeys(): Promise<void> {
-    await this.nameKey.sendKeys('Paci');
+  public async sendNameKeys(name): Promise<void> {
+    await this.nameKey.sendKeys(name);
   }
 
-  public async sendLastNameKeys(): Promise<void> {
-    await this.lastNameKey.sendKeys('Ente');
+  public async sendLastNameKeys(lastName): Promise<void> {
+    await this.lastNameKey.sendKeys(lastName);
   }
 
-  public async sendIdKeys(): Promise<void> {
-    await this.idKey.sendKeys(this.idValue);
+  public async sendIdKeys(id): Promise<void> {
+    await this.idKey.sendKeys(id);
   }
 
   public async clickPrepaidHealthCheckBtn(): Promise<void> {
